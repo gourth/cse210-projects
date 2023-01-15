@@ -1,42 +1,36 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Collections.Generic;
+
 
 class Program
 {
-
-    string filePath = "C:\\temp\\CSVTest.csv";
     static void Main(string[] args)
+
+    int getChoice()
     {
-        Program program = new Program();
-
-        program.writeToCSV();
-        program.readFromCSV();
-    }
-
-    public void writeToCSV()
-
-    // Write CSV file
-    StringBuilder builder = new StringBuilder();
-
-    string text1 = "Text1";
-    string text2 = "Text2";
-    Builder.AppendLine(string.Format("{0}|{1}", text1, text2));
-
-    File.WrtieAllText(filePath, UriBuilder.ToString());
-
-    public void readFromCSV()
-    {
-        StreamReader streamReader = new StreamReader(filePath);
-
-        while (!streamReader.EndOfStream)
+        Console.Write("What will you do?: ");
+        string c = Console.ReadLine();
+        if (c != "1" && c != "2" && c != "3" && c != "4" && c!= "4" && c!= "5")
         {
-            var line = streamReader.ReadLine();
-            var values = line.Split();
-
-            Console.WriteLine("{0}|{1}", values[0], values[1]);
+            while(c != "1" && c != "2" && c != "3" && c != "4" && c!= "4" && c!= "5")
+            {
+                Console.WriteLine("Invaid choice.(must be a number from 1-5)");
+                Console.WriteLine("What will you do?: ");
+                c = Console.ReadLine();
+            }
         }
     }
+        int choice = int.Parse(c);
+        return choice
 
-
+    void displayMenu()
+    {
+        Console.WriteLine("1. Write");
+        Console.WriteLine("2. Display");
+        Console.WriteLine("3. Load");
+        Console.WriteLine("4. Save");
+        Console.WriteLine("5. Quit");
+    }
 }
