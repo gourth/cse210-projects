@@ -7,10 +7,10 @@ public class journalEntry
     public string _date = "";
     public string _prompt = "";
     
-
+    
     public journalEntry()
     {
-
+        
     }
 
     public int getEntryPrompt()

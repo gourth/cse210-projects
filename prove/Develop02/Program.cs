@@ -24,10 +24,10 @@ class Program
                 c = Console.ReadLine();
             }
         }
-    }
+    
         int choice = int.Parse(c);
         return choice;
-
+    }
     void displayMenu()
     {
         Console.WriteLine("1. Write");
@@ -48,8 +48,10 @@ class Program
 
         if (choice == 1)
         {
-            string date = DateTime.Now.ToString("M/d/yyy");
-            e._date = DateOnly;
+            // string date = DateTime.Now.ToString("M/d/yyy");
+            // e._date = DateOnly;
+            DateTime theCurrentTime = DateTime.Now;
+            string dateText = theCurrentTime.ToShortDateString();
 
             int prom = e.getEntryPrompt();
             string p0 = "What cute thing did your daugther do today? ";
@@ -86,14 +88,14 @@ class Program
             Console.WriteLine(e._prompt);
             Console.Write("Write your entry: ");
             e._entry = Console.ReadLine();
-            journalEntry._AllEntries.Add(e);
+            // journalEntry._AllEntries.Add(e);
 
 
         }
 
         else if (choice ==2)
         {
-            foreach(journalEntry line in j.AllEntries)
+            foreach(journalEntry line in j._AllEntries)
         
         {
             Console.WriteLine(line._date);
@@ -106,7 +108,7 @@ class Program
         {
             Console.Write("Enter your file name: ");
             string filename = Console.ReadLine();
-            string [] lines = System.IO.File.ReadAllLines{filename};
+            string[] lines = System.IO.File.ReadAllLines(filename);
             int arrLen = lines.Length;
             Console.WriteLine(arrLen);
             foreach(string line in lines)
