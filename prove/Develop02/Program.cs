@@ -48,10 +48,9 @@ class Program
 
         if (choice == 1)
         {
-            // string date = DateTime.Now.ToString("M/d/yyy");
+            string date = DateTime.Now.ToString("M/d/yyy");
             // e._date = DateOnly;
-            DateTime theCurrentTime = DateTime.Now;
-            string dateText = theCurrentTime.ToShortDateString();
+            
 
             int prom = e.getEntryPrompt();
             string p0 = "What cute thing did your daugther do today? ";
