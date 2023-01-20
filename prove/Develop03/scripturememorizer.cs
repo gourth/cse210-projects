@@ -25,8 +25,10 @@ class scriptureMemorizer
         do
         {
             int rndIndex = new Random().Next(0, scriptureTextList.Count());
-            scriptureTextList[rndIndex] = new string('_', scriptureTextList[rndIndex].Length);
-            wordsRemoved++;
+            if (scriptureTextList[rndIndex].Contains('_') == false)
+            {   scriptureTextList[rndIndex] = new string('_', scriptureTextList[rndIndex].Length);
+                wordsRemoved++;
+            }
         } while (wordsRemoved != numWordsToRemove);
         
     }
